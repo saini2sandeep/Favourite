@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    android:background="@color/textColorWhite"
+    app:cardCornerRadius="4dp"
+    android:layout_height="140dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/text_view"
+            android:gravity="center"
+            android:text="sample text"
+            android:layout_centerHorizontal="true"
+            android:layout_height="30dp" />
+
+
+        <!--story like and comment layout-->
+        <LinearLayout
+            android:id="@+id/story_like_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorWhiteGrayShade"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+
+            <CheckBox
+                android:id="@+id/like_button_cb"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/like_button_background"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textSize="16sp"
+                android:theme="@style/checkBoxStyle"
+                android:visibility="visible" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/story_like_button_iv"-->
+            <!--android:layout_width="36dp"-->
+            <!--android:layout_height="36dp"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:padding="2dp"-->
+            <!--android:src="@drawable/ic_like_heart_button_empty" />-->
+
+            <ImageView
+                android:id="@+id/story_comment_button_iv"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="18dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_comment_empty" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

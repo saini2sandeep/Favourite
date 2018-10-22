@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+    <color name="colorRed">#d0021b</color>
+    <color name="colorWhiteGray">#F2F2F2</color>
+    <color name="colorBackgroundGray">#d8d8d8</color>
+    <color name="colorBackgroundGrayLight">#f8f8f8</color>
+    <color name="colorBottom_navigation_text">#eb6a32</color>
+    <color name="colorWhiteGrayShade">#fcfcfc</color>4
+
+    <!--Text Colors-->
+    <color name="textColorPrimaryDark">#000000</color>
+    <color name="textColorPrimary">#4A4A4A</color>
+    <color name="textColorGray">#9B9B9B</color>
+    <color name="textColorProfileBlack">#272727</color>
+    <color name="textColorGrayDark">#8b8b8b</color>
+    <color name="textColorGrayLight">#CCCCCC</color>
+    <color name="textColorWhiteDull">#F2F2F2</color>
+    <color name="textColorWhite">#FFFFFF</color>
+    <color name="textLimeDark">#969c44</color>
+    <color name="textColorLimeLight">#c1c857</color>
+    <color name="textColorOrange">#ffc883</color>
+    <color name="textColorOrangeYellow">#f99f00</color>
+    <color name="textColorDarkSmoke">#798897</color>
+    <color name="textColorLightSmoke">#fafafa</color>
+
+
+
+</resources>
