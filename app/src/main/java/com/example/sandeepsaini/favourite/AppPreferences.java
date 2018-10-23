@@ -7,11 +7,11 @@ import java.util.Map;
 /**
  * Created by Sandeep Saini on 10/23/2018
  */
-public class AppPrefrences {
+public class AppPreferences {
 
     private PreferenceManager preferenceManager;
 
-    public AppPrefrences(PreferenceManager preferenceManager) {
+    public AppPreferences(PreferenceManager preferenceManager) {
         this.preferenceManager = preferenceManager;
     }
 
@@ -29,6 +29,11 @@ public class AppPrefrences {
 //            }
 //        }
     }
+
+    public void clear() {
+        preferenceManager.removeAll();
+    }
+
 
     public List<Story> getFavouriteCardList() {
         JsonHashMap jsonHashMap = preferenceManager.getMapData(PreferenceKey.FAVOURITE_CONTENT_LIST);

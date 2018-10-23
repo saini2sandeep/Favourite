@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,10 +25,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private int changedItemPosition;
     private boolean isLiked;
+    private AppPreferences appPreferences;
 
-    public RecyclerViewAdapter(List<Story> storyList, Context context) {
+    public RecyclerViewAdapter(List<Story> storyList, Context context,AppPreferences appPreferences) {
         this.storyList = storyList;
         this.context = context;
+        this.appPreferences = appPreferences;
     }
 
     @NonNull
@@ -59,8 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             likeCheckBox = itemView.findViewById(R.id.like_button_cb);
         }
 
-
-        public void setViewData(Story story, final int adapterPosition) {
+        public void setViewData(final Story story, final int adapterPosition) {
             textView.setText(story.getTitle());
 
             if (story.getIsLiked() == 1)
@@ -77,16 +77,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         if (isChecked) {
                             isLiked = true;
                             updateLikes();
+                            appPreferences.saveFavouriteCard(story);
                             Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show();
                         } else {
                             isLiked = false;
                             updateLikes();
+                            appPreferences.deleteCard(story.getIdStory());
                             Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
             });
-
         }
     }
 

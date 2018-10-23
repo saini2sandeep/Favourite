@@ -23,17 +23,20 @@ public class Story {
         this.isLiked = isLiked;
     }
 
-    public int getIdStory() {
+    public String getIdStory() {
         return idStory;
     }
 
-    public void setIdStory(int isStory) {
+    public void setIdStory(String isStory) {
         this.idStory = isStory;
     }
 
-    private int idStory;
+    private String idStory;
     private String title;
     private int isLiked;
 
-
+    @Override
+    public String toString() {
+        return GsonUtils.convertToJSON(this);
+    }
 }

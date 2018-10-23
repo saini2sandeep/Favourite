@@ -1,44 +1,50 @@
 package com.example.sandeepsaini.favourite;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private List<Story> storyList = new ArrayList<>();
+    Button cardListBtn;
+    Button favtCardListBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recycler_view);
 
-        setUpData();
+        cardListBtn = findViewById(R.id.card_list_button);
+        favtCardListBtn = findViewById(R.id.favt_list_button);
 
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new RecyclerViewAdapter(storyList, this));
+
+
+        cardListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        favtCardListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ShowFavouriteList.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void setUpData() {
 
-        for (int i = 0; i < 10; i++) {
-            Story story = new Story();
-            story.setIdStory(i);
-            if (i % 2 == 0)
-                story.setIsLiked(0);
-            else
-                story.setIsLiked(1);
-            story.setTitle("Sample " + i);
-
-            storyList.add(story);
-        }
-    }
 }
